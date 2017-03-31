@@ -191,12 +191,17 @@ console.log();
  * Maak in dit object bij het aanmaken een functie aan met de naam 'showName'
  */
 
+let student = {
+    mymethod : function(name) { return name; }
+}
+
+let name = "rick";
+student.mymethod(name);
 /**
  * Opdracht 9: Arrays & for loops
  * Maak een array genaamd 'students' met daarin 10 namen van je medeleerlingen
  * Schrijf een for loop om alle namen in de Array te laten zien (console.log())
  */
-
 let students =["coen", "sam", "rick", "Stijn", "victor", "karahan" , "Floris", "Ramy", "Quenten"]
 for (students + 1; students < 8; students++);
 /**
@@ -206,7 +211,10 @@ for (students + 1; students < 8; students++);
  * Maak een variabele fullName, en zorg ervoor dat de variabelen 'firstName' en
  * 'lastName' hier samen in worden opgeslagen
  */
-
+var firstname = "rick";
+var lastname = "woltheus";
+var fullname = firstname + " " + lastname;
+console.log(fullname);
 /**
  * Opdracht 11: Random cijfers
  * console.log() een willekeurige cijfer tussen 0 en 5
@@ -214,6 +222,10 @@ for (students + 1; students < 8; students++);
  * console.log() een willekeurige cijfer tussen 30 en 40
  * console.log() een willekeurige cijfer tussen -100 en 100
  */
+console.log(Math.floor(Math.random()* 6));
+console.log(Math.floor(Math.random()* 10 + 1));
+console.log(Math.floor(Math.random()* 10 + 31));
+console.log(Math.floor(Math.random()* 200 - 100));
 
 /**
  * Opdracht 12: Primitive, Array of object?
@@ -221,26 +233,39 @@ for (students + 1; students < 8; students++);
  * false te zetten
  */
 console.log('De naam van een gebruiker sla ik op in een:',
-    { array : false, object : false, primitive : false });
+    { array : false, object : false, primitive : true });
 
 console.log('De naam, leeftijd en lengte van een gebruiker sla ik op in een:',
-    { array : false, object : false, primitive : false });
+    { array : true, object : false, primitive : false });
 
 console.log('Alle facturen van een zakelijke klant sla ik op in een:',
-    { array : false, object : false, primitive : false });
+    { array : true, object : false, primitive : false });
 
 console.log('Een factuur sla ik op in een:',
-    { array : false, object : false, primitive : false });
+    { array : false, object : true, primitive : false });
 
+<<<<<<< HEAD
 console.log('Als ik vanuit JavaScript een menu maak met knoppen, dan sla ik de knoppen op in een:',
-    { array : false, object : false, primitive : false });
+=======
+console.log(
+    'Als ik vanuit JavaScript een menu maak met knoppen, dan sla ik de knoppen op in een:',
+>>>>>>> BerendWeij/master
+    { array : false, object : true, primitive : false });
 
 /**
  * Opdracht 13: Keywords
  * Maak 4 variabelen aan met de let keyword
  * Maak 4 variabelen aan met de const keyword
  */
+let leeftijd = 19;
+let name = "rick";
+let geslacht = "twijfel";
+let werk = "developer";
 
+const paginas = 5;
+const bladzijdes = 30;
+const automerk = "bmw";
+const editor = "intellij";
 /**
  * Opdracht 14: Keywords
  * Geef antwoord op de volgende vragen:
@@ -251,6 +276,51 @@ console.log('Wanneer gebruik je de const keyword', 'Als je niet wilt dat die var
 /**
  * Opdracht 15: Objects en array
  * Maak een object voor jezelf (naam, leeftijd, lengte)
- * Maak in je object een array aan genaamd 'family' en vul deze array met namen uit je familie
+ * Maak in je object een array aan genaamd 'family' en vul deze array met namen
+ * uit je familie
  * (objecten en arrays kunnen in elkaar opgeslagen worden)
  */
+let ik = {
+    naam : 'Rick',
+    leeftijd : '19',
+    lengte : '1.85',
+    family : myFamily = ['wouter', 'marina', 'hris']
+};
+
+/**
+ * Hieronder heb ik code geschreven die je nodig hebt voor vraag 16 en 17
+ * Aan deze code hoef je niets te veranderen
+ */
+
+Array.prototype.random = function() {
+    let randomIndex = Math.floor(Math.random() * this.length);
+    return this[ randomIndex ];
+};
+
+String.prototype.replaceAll = function(search, replacement) {
+    return this.replace(new RegExp(search, 'g'), replacement);
+};
+
+/**
+ * Opdracht 16: Custom prototype method gebruiken
+ * Maak een array met meerdere namen
+ * Probeer vervolgens de random() functie (die hierboven staat) te gebruiken
+ * Tip: je roept deze functie op dezelfde manier aan als bijvoorbeeld push() en
+ * splice().
+ * console.log() de naam die deze functie returned
+ */
+
+/**
+ * Opdracht 17: Custom prototype method gebruiken
+ * Maak een variabele waarin je een lange tekst opslaat
+ * Probeer vervolgens de replaceAll() functie te gebruiken om een bepaald woord
+ * op alle plekken te vervangen voor een ander woord
+ * console.log() deze gewijzigde tekst
+ */
+
+/**
+ * Opdracht 18: Prototype based language
+ * Geef antwoord op onderstaande vraag
+ */
+console.log('Waarom heet JavaScript een prototype based language?',
+            'jouw antwoord');
