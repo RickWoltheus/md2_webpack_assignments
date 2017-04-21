@@ -202,7 +202,7 @@ student.mymethod(name);
  * Maak een array genaamd 'students' met daarin 10 namen van je medeleerlingen
  * Schrijf een for loop om alle namen in de Array te laten zien (console.log())
  */
-let students =["coen", "sam", "rick", "Stijn", "victor", "karahan" , "Floris", "Ramy", "Quenten"]
+let studenten =["coen", "sam", "rick", "Stijn", "victor", "karahan" , "Floris", "Ramy", "Quenten"]
 for (students + 1; students < 8; students++);
 /**
  * Opdracht 10: Strings samenvoegen
@@ -244,21 +244,15 @@ console.log('Alle facturen van een zakelijke klant sla ik op in een:',
 console.log('Een factuur sla ik op in een:',
     { array : false, object : true, primitive : false });
 
-<<<<<<< HEAD
-console.log('Als ik vanuit JavaScript een menu maak met knoppen, dan sla ik de knoppen op in een:',
-=======
-console.log(
-    'Als ik vanuit JavaScript een menu maak met knoppen, dan sla ik de knoppen op in een:',
->>>>>>> BerendWeij/master
-    { array : false, object : true, primitive : false });
 
 /**
  * Opdracht 13: Keywords
  * Maak 4 variabelen aan met de let keyword
  * Maak 4 variabelen aan met de const keyword
  */
+
 let leeftijd = 19;
-let name = "rick";
+let nameStudent = "rick";
 let geslacht = "twijfel";
 let werk = "developer";
 
@@ -280,11 +274,12 @@ console.log('Wanneer gebruik je de const keyword', 'Als je niet wilt dat die var
  * uit je familie
  * (objecten en arrays kunnen in elkaar opgeslagen worden)
  */
+let myFamily = [];
 let ik = {
     naam : 'Rick',
     leeftijd : '19',
     lengte : '1.85',
-    family : myFamily = ['wouter', 'marina', 'hris']
+    family : ['wouter', 'marina', 'chris']
 };
 
 /**
@@ -309,6 +304,9 @@ String.prototype.replaceAll = function(search, replacement) {
  * splice().
  * console.log() de naam die deze functie returned
  */
+let namen = ["Saab", "Volvo", "BMW"];
+
+console.log(namen.random());
 
 /**
  * Opdracht 17: Custom prototype method gebruiken
@@ -317,13 +315,15 @@ String.prototype.replaceAll = function(search, replacement) {
  * op alle plekken te vervangen voor een ander woord
  * console.log() deze gewijzigde tekst
  */
+let text = "hallo ik ben rick.";
 
+console.log(text.replaceAll("rick", "Dick"));
 /**
  * Opdracht 18: Prototype based language
  * Geef antwoord op onderstaande vraag
  */
 console.log('Waarom heet JavaScript een prototype based language?',
-            'jouw antwoord');
+            'Java script gebruikt Objecten ipv classes en daarom prototype language');
 
 
 /**
@@ -332,7 +332,10 @@ console.log('Waarom heet JavaScript een prototype based language?',
  * je bij elke array een empty() functie kunt aanroepen.
  * Zorg ervoor dat deze functie er is en laat met 3 arrays zien dat hij werkt
  */
-
+Array.prototype.truncate = function() {
+    let randomIndex = Math.floor(Math.random() * this.length);
+    return this[ randomIndex ];
+};
 /**
  * Opdracht 20: Monkey patching (?)
  * Je begint nu in te zien hoe JS werkt. Probeer nu de splice() en push()
